@@ -79,7 +79,7 @@
                     <span>
                         <span class="buttons-span">
                             <a href="{{route('show-file',['id'=>$file->id])}}"
-                                class="btn btn-secondary show-file">Show</a>
+                                class="btn btn-secondary show-file" target="_blank">Show</a>
                         </span>
                         <span>
                             <a class="btn btn-danger delete-file" data-fileid="{{ $file->id }}"
