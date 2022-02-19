@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\QRCodeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,10 @@ use App\Http\Controllers\QRCodeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,3 +35,5 @@ Route::delete('delete-file',[FileController::class,'deleteFile'])->name('delete-
 Route::get('simple-qr-code', [QRCodeController::class, 'simpleQr']);
 Route::get('color-qr-code', [QRCodeController::class, 'colorQr']);
 Route::get('image-qr-code', [QRCodeController::class, 'imageQr']);
+
+
