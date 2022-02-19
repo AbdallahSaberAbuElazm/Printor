@@ -9,9 +9,10 @@ class ProductController extends Controller
 {
     public function index(){
         $products = Product::with(['files','option'])->paginate();
-        return view('admin.products.products')->with([
-          'products'=>$products,
-        ]);
+        return $products;
+        // view('admin.products.products')->with([
+        //   'products'=>$products,
+        // ]);
       }
 
       public function newProduct($id = null){

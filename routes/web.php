@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\QRCodeController;
+use App\Http\Controllers\LibraryOwnerController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -25,7 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('products',[ProductController::class,'index'])->name('products');
+Route::get('owners',[LibraryOwnerController::class,'index'])->name('owners');
 
 // Route::get('file-upload', [FileController::class, 'index'])->name('file-upload');
 // Route::post('store', [FileController::class, 'store'])->name('store');

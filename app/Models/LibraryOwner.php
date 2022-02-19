@@ -10,6 +10,7 @@ class LibraryOwner extends Model
     use HasFactory;
 
     protected $fillable=[
-        'start','end','available','rating','extra_options'
+        'start_at','expires_at','available','rating',
+        'extra_options','option_id','extra_option'
     ];
 }
