@@ -9,21 +9,28 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
-        'user_id', 'library_owner_id','cart_id',
-        'order_date' ,'payment_id','delivery',
-        'total_cost',
+    protected $fillable = [
+        'user_id', 'library_owner_id', 'cart_id',
+        'order_date', 'payment_id', 'delivery',
+        'total_cost','voucher_id',
     ];
 
-    public function customer(){
+    public function customer()
+    {
         return $this->belongsTo(User::class);
-      }
+    }
 
-      public function cart(){
-        return $this->hasOne(Cart::class,'cart_id','id');
-      }
+    public function cart()
+    {
+        return $this->hasOne(Cart::class, 'cart_id', 'id');
+    }
 
-      public function payments(){
+    public function payments()
+    {
         return $this->hasOne(Payment::class);
-      }
+    }
+
+    public function voucher(){
+        return $this->hasOne(Voucher::class,'voucher_id','id');
+    }
 }
