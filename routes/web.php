@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\QRCodeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,16 +25,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('file-upload', [FileController::class, 'index'])->name('file-upload');
-Route::post('store', [FileController::class, 'store'])->name('store');
-Route::get('show-file/{id}',[FileController::class,'showFile'])->name('show-file');
-Route::delete('delete-file',[FileController::class,'deleteFile'])->name('delete-file');
+Route::get('products',[ProductController::class,'index'])->name('products');
 
-
-
-
-Route::get('simple-qr-code', [QRCodeController::class, 'simpleQr']);
-Route::get('color-qr-code', [QRCodeController::class, 'colorQr']);
-Route::get('image-qr-code', [QRCodeController::class, 'imageQr']);
+// Route::get('file-upload', [FileController::class, 'index'])->name('file-upload');
+// Route::post('store', [FileController::class, 'store'])->name('store');
+// Route::get('show-file/{id}',[FileController::class,'showFile'])->name('show-file');
+// Route::delete('delete-file',[FileController::class,'deleteFile'])->name('delete-file');
+// Route::get('simple-qr-code', [QRCodeController::class, 'simpleQr']);
+// Route::get('color-qr-code', [QRCodeController::class, 'colorQr']);
+// Route::get('image-qr-code', [QRCodeController::class, 'imageQr']);
 
 

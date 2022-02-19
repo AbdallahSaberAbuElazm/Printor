@@ -8,11 +8,9 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::with(['category','images'])->paginate( env('PAGINATEION_COUNT'));
-        $currency_code = env('CURRENCY_CODE','ج');
+        $products = Product::with(['files','option'])->paginate();
         return view('admin.products.products')->with([
           'products'=>$products,
-          'currency_code' => $currency_code
         ]);
       }
 

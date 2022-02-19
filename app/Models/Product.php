@@ -22,7 +22,7 @@ class Product extends Model
         return $this->hasMany(File::class,'file_id','id');
     }
 
-    public function options(){
+    public function option(){
         return $this->hasOne(Option::class,'option_id','id');
     }
 }
