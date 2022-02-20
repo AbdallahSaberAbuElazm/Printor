@@ -17,8 +17,10 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'start'         =>$this->faker->dateTime().now(),
-            'end'           =>$this->faker->dateTime().now(),
+            'title'         =>$this->faker->name(),
+            'file'          =>$this->faker->numberBetween(1,5),
+            'price'         =>$this->faker->numberBetween(1,50),
+            'no_of_copies'  =>$this->faker->numberBetween(1,10),
             'option_id'     =>$this->faker->numberBetween(1,3),
         ];
     }
