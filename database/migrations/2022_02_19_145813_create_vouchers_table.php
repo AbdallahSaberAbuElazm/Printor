@@ -24,6 +24,8 @@ class CreateVouchersTable extends Migration
             // The description of the voucher - Not necessary
             $table->text('description')->nullable();
 
+            //6 (max_uses) -> 2 (uses) ->
+
             // The number of uses currently
             $table->integer('uses')->unsigned()->nullable();
 

@@ -16,11 +16,12 @@ class LibraryOwnerFactory extends Factory
     public function definition()
     {
         return [
+            'user_id'       =>$this->faker->numberBetween(1,200),
             'start_at'      =>Carbon::now(),
             'expires_at'    =>Carbon::now(),
             'available'     =>$this->faker->numberBetween(0,1),
             'rating'        =>$this->faker->numberBetween(1,5),
-            'option_id'     =>$this->faker->numberBetween(1,3),
+            'extra_options'=>$this->faker->text(),
         ];
     }
 }

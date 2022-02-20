@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -17,10 +17,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table='users';
+    protected $primaryKey='id';
+
     protected $fillable = [
         'first_name','last_name','email','email_verified_at',
        'mobile','mobile_verified_at','password','shipping_address',
-       'billing_address','university_student'
+       'billing_address','university_student','api_token','remember_token'
     ];
 
     /**
@@ -41,6 +44,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function libraryOwners(){
+        return $this->hasMany(LibraryOwner::class,'user_id','id');
+    }
 
     public function orders(){
         return $this->hasMany(Order::class);

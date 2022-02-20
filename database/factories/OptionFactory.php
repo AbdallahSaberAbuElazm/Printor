@@ -14,12 +14,13 @@ class OptionFactory extends Factory
     public function definition()
     {
         return [
-            'size_id'       =>$this->faker->numberBetween(1,10),
-            'color'         =>$this->faker->randomElement([true,false]),
-            'side'          =>$this->faker->randomElement([true,false]),
-            'layout'        =>$this->faker->randomElement([true,false]),
-            'wrapping'      =>$this->faker->randomElement([true,false]),
-            'note'          =>$this->faker->text(),
+            'size_id'   =>$this->faker->numberBetween(1,10) ,
+            'color'     =>$this->faker->randomElement([true,false]),
+            'side'      =>$this->faker->randomElement([true,false]),
+            'layout'    =>$this->faker->randomElement([true,false]),
+            'wrapping'  =>$this->faker->numberBetween(1,11),
+            'note'      =>$this->faker->text(),
+            'price'     =>$this->faker->numberBetween(1,49),
         ];
     }
 }

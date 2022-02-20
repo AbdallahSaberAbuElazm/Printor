@@ -9,6 +9,9 @@ class Option extends Model
 {
     use HasFactory;
 
+    protected $table = 'options';
+    protected $primaryKey = 'id';
+
     protected $fillable=[
         'size_id' , 'color','side',
         'layout','wrapping','note',
