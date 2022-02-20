@@ -43,10 +43,10 @@ class CreateVouchersTable extends Migration
             $table->boolean('is_fixed')->default(true);
 
             // When the voucher begins
-            $table->timestamp('starts_at');
+            $table->timestamp('starts_at')->nullable();
 
             // When the voucher ends
-            $table->timestamp('expires_at');
+            $table->timestamp('expires_at')->nullable();
 
             // You know what this is...
             $table->timestamps();
