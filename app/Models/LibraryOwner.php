@@ -10,7 +10,11 @@ class LibraryOwner extends Model
     use HasFactory;
 
     protected $fillable=[
-        'start_at','expires_at','available','rating',
+        'user_id','start_at','expires_at','available','rating',
         'extra_options','option_id','extra_option'
     ];
+
+    public function libraryOwner(){
+        return $this->belongsTo(User::class,'user_id','id');
+    }
 }

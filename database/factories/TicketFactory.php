@@ -14,7 +14,12 @@ class TicketFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id'       =>$this->faker->numberBetween(1,200),
+            'order_id'      =>$this->faker->numberBetween(1,200),
+            'ticket_type_id'=>$this->faker->numberBetween(1,4),
+            'title'         =>$this->faker->name(),
+            'message'       =>$this->faker->text(),
+            'status'        =>$this->faker->randomElement(['pending','waiting']),
         ];
     }
 }
