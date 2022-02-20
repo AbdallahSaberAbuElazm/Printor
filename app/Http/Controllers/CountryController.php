@@ -9,9 +9,7 @@ class CountryController extends Controller
 {
     public function index(){
         $countries = Country::paginate(env('PAGINATEION_COUNT'));
-        return view('admin.countries.countries')->with(
-          ['countries'=>$countries]
-        );
+        return $countries;
       }
 
       public function countryEnExists( $countryNameEn){

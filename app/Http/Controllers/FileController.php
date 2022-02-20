@@ -9,10 +9,8 @@ class FileController extends Controller
 {
     public function index()
     {
-        $files = File::paginate();
-        return view('files.file-upload')->with([
-            'files' => $files,
-        ]);
+        $files = File::paginate(env('PAGINATEION_COUNT'));
+        return $files;
     }
 
     public function store(Request $request)

@@ -10,9 +10,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with(['billingAddress'])->paginate(env('PAGINATION_CODE'));
-        return view('admin.customers.users')->with([
-            'users' => $users,
-        ]);
+        return $users;
     }
 
     public function show(Request $request)

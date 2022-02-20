@@ -19,10 +19,10 @@ class Product extends Model
     }
 
     public function files(){
-        return $this->hasMany(File::class,'file_id','id');
+        return $this->hasMany(File::class,'id','file_id');
     }
 
     public function option(){
-        return $this->hasOne(Option::class,'option_id','id');
+        return $this->hasOne(Option::class,'id','option_id');
     }
 }

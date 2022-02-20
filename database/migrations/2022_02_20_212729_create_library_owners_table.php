@@ -16,8 +16,8 @@ class CreateLibraryOwnersTable extends Migration
         Schema::create('library_owners', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
-            $table->dateTime('start')->nullable();
-            $table->dateTime('end')->nullable();
+            $table->dateTime('start_at')->nullable();
+            $table->dateTime('expires_at')->nullable();
             $table->boolean('available')->default(false);
             $table->integer('rating')->default(0);
             $table->text('extra_options')->nullable();

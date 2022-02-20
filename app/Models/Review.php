@@ -19,6 +19,10 @@ class Review extends Model
         return $this->belongsTo(User::class,'user_id','id');
     }
 
+    public function libraryOwner(){
+        return $this->belongsTo(LibraryOwner::class);
+    }
+
     public function humanFormattedDate(){
         return Carbon::createFromTimeStamp( strtotime($this->created_at))->diffForHumans();
       }
