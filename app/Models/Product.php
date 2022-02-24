@@ -25,4 +25,8 @@ class Product extends Model
     public function option(){
         return $this->hasOne(Option::class,'id','option_id');
     }
+
+    public function vouchers(){
+        return $this->belongsToMany(Voucher::class);
+    }
 }

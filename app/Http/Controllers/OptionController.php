@@ -9,7 +9,7 @@ class OptionController extends Controller
 {
     public function index()
     {
-        $options = Option::paginate(env('PAGINATEION_COUNT'));
+        $options = Option::with(['sizes','hasWrapping'])->paginate(env('PAGINATEION_COUNT'));
         return $options;
     }
 }

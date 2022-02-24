@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\File;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class FileController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,19 +36,16 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'file'  =>'required',
-        ]);
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\File  $file
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(File $file)
+    public function show(Order $order)
     {
         //
     }
@@ -56,10 +53,10 @@ class FileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\File  $file
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(File $file)
+    public function edit(Order $order)
     {
         //
     }
@@ -68,10 +65,10 @@ class FileController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\File  $file
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, File $file)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -79,10 +76,10 @@ class FileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\File  $file
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(File $file)
+    public function destroy(Order $order)
     {
         //
     }

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     public function index(){
-        $orders = Order::with(['customer','payments'])->paginate(env('PAGINATION_CODE'));
+        $orders = Order::with(['customer','payments','libraryOwner'])->paginate(env('PAGINATION_CODE'));
         return $orders;
       }
 }

@@ -33,4 +33,8 @@ class Order extends Model
     public function voucher(){
         return $this->hasOne(Voucher::class,'voucher_id','id');
     }
+
+    public function libraryOwner(){
+        return $this->belongsTo(LibraryOwner::class,'library_owner_id','id');
+    }
 }

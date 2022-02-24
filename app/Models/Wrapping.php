@@ -10,6 +10,10 @@ class Wrapping extends Model
     use HasFactory;
 
     protected $fillable = [
-        'wrapping_category','price'
+        'wrapping_category','price',
     ];
+
+    public function sizes(){
+        return $this->belongsToMany(Size::class);
+    }
 }

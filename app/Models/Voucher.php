@@ -27,4 +27,12 @@ class Voucher extends Model
         }
         return $this->orders()->where('user_id', $user->id)->count() < $this->max_uses_user;
     }
+
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
+
+    public function products(){
+        return $this->belongsToMany(Product::class);
+    }
 }
