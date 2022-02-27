@@ -10,8 +10,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LibraryOwnerController;
 use App\Http\Controllers\OptionController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ShipmentController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\TicketController;
@@ -53,6 +55,8 @@ Route::middleware(['auth','user_is_admin'])->group(function () {
     Route::get('reviews', [ReviewController::class, 'index'])->name('reviews');
     Route::get('shipments', [ShipmentController::class, 'index'])->name('shipments');
     Route::get('tickets', [TicketController::class, 'index'])->name('tickets');
+    Route::get('roles', [RoleController::class, 'index'])->name('roles');
+    Route::get('payments', [PaymentController::class, 'index'])->name('payments');
     //get size
     Route::get('sizes',[SizeController::class,'index'])->name('sizes');
     Route::get('sizes/{id}/paper-types',[SizeController::class,'showPaperTypes']);
