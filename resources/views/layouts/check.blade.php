@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Shopping App</title>
+    <title>Printore App</title>
 
     <script src="https://kit.fontawesome.com/0dcc6f6402.js" crossorigin="anonymous"></script>
     <!-- Fonts -->
