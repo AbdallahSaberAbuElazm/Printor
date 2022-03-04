@@ -19,7 +19,9 @@ class UserApiResource extends JsonResource
             'first_name'        =>$this->first_name,
             'last_name'         =>$this->last_name,
             'email'             =>$this->email,
-            'api_token'         =>$this->api_token,
+            'mobile'            =>$this->mobile,
+            'university_student'=>$this->university_student,
+            'token'             =>$this->createToken('token')->plainTextToken,
         ];
     }
 }

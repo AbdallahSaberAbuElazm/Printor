@@ -19,6 +19,7 @@ class AuthController extends Controller
             'last_name'     => 'required',
             'email'         => 'required',
             'password'      => 'required',
+            'mobile'        => 'required',
         ]);
 
         $user = new ModelsUser();
@@ -28,7 +29,7 @@ class AuthController extends Controller
         $user->password      = Hash::make($request['password']);
         $user->save();
 
-        return new UserApiResource($user);
+         return new UserApiResource($user);
     }
 
     public function login(Request $request)
@@ -45,8 +46,7 @@ class AuthController extends Controller
             $user = ModelsUser::where('email' ,$email)->first();
             $userAuth = auth()->user();
             $token = $user->createToken('token');
-            return $token->plainTextToken;
-            //return new UserApiResource($user);
+            return new UserApiResource($user);
         }else{
             return [
                 'error' =>true,

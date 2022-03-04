@@ -23,7 +23,7 @@ class User extends Authenticatable
     protected $fillable = [
         'first_name','last_name','email','email_verified_at',
        'mobile','mobile_verified_at','password','shipping_address',
-       'billing_address','university_student','api_token','remember_token'
+       'billing_address','university_student','remember_token'
     ];
 
     /**

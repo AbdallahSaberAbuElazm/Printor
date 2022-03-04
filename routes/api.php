@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\PaymentController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\AddressController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +39,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('users', [UserController::class, 'show']);
     //Get Address
     Route::get('addresses', [AddressController::class, 'index']);
-    //Store file
-    Route::post('files', [App\Http\Controllers\Api\FileController::class, 'store']);
+    //Get , Store file
+    Route::get('show-files/{id}',[FileController::class,'show']);
+    Route::post('store-files', [FileController::class, 'store']);
     //Get Full Option (size,paper_types,sides,layouts,wrapping)
     Route::get('sizes', [SizeController::class, 'index']);
     Route::get('sizes/{id}/paper-types', [SizeController::class, 'showPaperTypes']);

@@ -14,6 +14,11 @@ class FileResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'file_id'  => $this->id,
+            'file_name' => $this->name,
+            'file_path' => $this->path,
+            'file_page' =>'printor-app.epizy.com/laravel/storage/app/public/public/files' . '/' . $this->page,
+        ];
     }
 }

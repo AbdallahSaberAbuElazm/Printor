@@ -17,9 +17,10 @@ class OptionResource extends JsonResource
         return [
             'option_id'            =>$this->id,
             'option_size'          =>new SizeResource($this->sizes),
+            'option_paper_type'    =>new PaperTypeResource($this->paper_type_id),
             'option_color'         =>$this->color,
             'option_side'          =>$this->side,
-            'option_layout'        =>$this->layout,
+            'option_layout'        =>new LayoutResource($this->layout),
             'option_wrapping'      =>new WrappingResource($this->wrapping),
             'option_note'          =>$this->note,
             'ption_price'          =>$this->price
