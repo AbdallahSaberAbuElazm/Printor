@@ -29,7 +29,7 @@ return [
     | You may customize route prefix. (default: 'adminer')
     |
     */
-    'route_prefix' => 'adminer',
+    'route_prefix' => env('ADMINER_ROUTE_PREFIX', 'adminer'),
 
     /*
     |--------------------------------------------------------------------------
@@ -45,5 +45,5 @@ return [
     |       'middleware' => ['auth', 'adminer']
     |
     */
-    'middleware' => 'auth',
+    // 'middleware' => 'auth',
 ];
