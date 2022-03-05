@@ -71,7 +71,6 @@ class RegisterController extends Controller
         $user->last_name     = $data['last_name'];
         $user->email         = $data['email'];
         $user->password      = Hash::make($data['password']);
-        $user->token = $user->createToken('token')->plainTextToken;
         $user->save() ;
         return $user;
     }
