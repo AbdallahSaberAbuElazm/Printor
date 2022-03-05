@@ -62,7 +62,7 @@
                                 }}</label>
 
                             <div class="col-md-6">
-                                <input id="mobile" type="mobile" class="form-control @error('mobile') is-invalid @enderror"
+                                <input id="mobile" type="tel" class="form-control @error('mobile') is-invalid @enderror"
                                     name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile">
 
                                 @error('mobile')
