@@ -23,7 +23,7 @@ class FileController extends Controller
 
         ]);
         $name = $request->file('file')->getClientOriginalName();
-        $path = $request->file('file')->store('public/files');
+        $path = $request->file('file')->store('public/storage/public/files');
 
         $file = new File();
         $extension = explode('/', $path);

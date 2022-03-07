@@ -38,7 +38,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth','user_is_admin'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('owners', [LibraryOwnerController::class, 'index'])->name('owners');
     Route::get('users', [UserController::class, 'index'])->name('users');
     Route::get('addresses', [AddressController::class, 'index'])->name('addresses');
