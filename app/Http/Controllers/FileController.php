@@ -32,7 +32,7 @@ class FileController extends Controller
         $file->path = $fileName;
         $file->extension = $request->file('file')->getMimeType();
        // $extension = $request->file('file')->extension();
-        $path = public_path('storage\public\files' . '\\' . $fileName);
+        $path = public_path('storage/public/files' . '/' . $fileName);
         $file->page = $this->countPages($path);
 
         $file->save();
