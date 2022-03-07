@@ -18,7 +18,7 @@ class FileController extends Controller
     public function store(Request $request)
     {
         //required|csv,txt,xlx,xls,pdf|max:2048
-        $validatedData = $request->validate([
+        $request->validate([
             'file' => 'required',
 
         ]);
