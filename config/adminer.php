@@ -45,5 +45,5 @@ return [
     |       'middleware' => ['auth', 'adminer']
     |
     */
-    'middleware' => 'auth',
+    // 'middleware' => 'auth',
 ];

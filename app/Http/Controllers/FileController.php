@@ -23,7 +23,7 @@ class FileController extends Controller
 
         ]);
         $name = $request->file('file')->getClientOriginalName();
-        $path = $request->file('file')->store('public/files');
+        $path = $request->file('file')->store('files');
 
         $file = new File();
         $extension = explode('/', $path);
@@ -32,7 +32,7 @@ class FileController extends Controller
         $file->path = $fileName;
         $file->extension = $request->file('file')->getMimeType();
        // $extension = $request->file('file')->extension();
-        $path = public_path('storage\public\files' . '\\' . $fileName);
+        $path = public_path('storage\files' . '\\' . $fileName);
         $file->page = $this->countPages($path);
 
         $file->save();
